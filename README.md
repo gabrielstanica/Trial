@@ -23,3 +23,9 @@ OR
 git clone https://github.com/gabrielstanica/Trial.git
 mvn test -Dtestset=testng.xm
 ```
+
+
+### DEMO
+
+https://user-images.githubusercontent.com/5984880/199847224-0e619983-2627-4a15-abe0-ceab76a506dc.mp4
+
