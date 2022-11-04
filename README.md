@@ -1,4 +1,5 @@
-# Page Object model Test automation framework using Selenium with Java, TestNG and Maven-
+# Page Object model Test automation framework using Selenium with Java, TestNG and Maven
+
 This is a DEMO project to demonstrate what is page object model framework and how it can used in selenium to automate any application.
 TestNG is used as test framework.
 
@@ -23,3 +24,17 @@ OR
 git clone https://github.com/gabrielstanica/Trial.git
 mvn test -Dtestset=testng.xm
 ```
+
+
+### DEMO E2E
+
+https://user-images.githubusercontent.com/5984880/199847224-0e619983-2627-4a15-abe0-ceab76a506dc.mp4
+
+### DEMO IDE
+
+
+
+https://user-images.githubusercontent.com/5984880/199847724-24382341-859f-4722-a4a4-68ff12f60e9e.mp4
+
+
+
