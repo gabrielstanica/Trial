@@ -25,6 +25,19 @@ git clone https://github.com/gabrielstanica/Trial.git
 mvn test -Dtestset=testng.xm
 ```
 
+### Improvements
+* Improve and create a single html file for all reports in ExtentReport and perform changes on view side
+* Add fluent wait instead of using Thread.sleep
+* Update selectors/xpath to relative insted of absolute
+* Create core jar for common methods to search/isEnabled/isDisplayed elements
+* Catch exceptions on possible driver quite and include in reporting
+
+### TestReport example
+
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/5984880/200077382-75e49ec9-f3cd-424c-8c2f-6ae9ac2c50d3.png">
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/5984880/200077537-52223430-dcf7-4a5a-ab63-b5f994374267.png">
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/5984880/200077550-09b18027-5f9a-4136-9342-032749b4d399.png">
+
 
 ### DEMO E2E
 
