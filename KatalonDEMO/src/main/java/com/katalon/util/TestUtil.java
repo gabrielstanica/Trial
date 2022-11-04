@@ -2,6 +2,7 @@ package com.katalon.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Base64;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import com.katalon.base.TestBase;
+import org.openqa.selenium.WebDriver;
 
 public class TestUtil extends TestBase {
 
@@ -20,6 +22,11 @@ public class TestUtil extends TestBase {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
 		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
+	}
+
+	public static String getScreenshot() {
+		String screenshotBase64 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+		return screenshotBase64;
 	}
 
 	public static void runTimeInfo(String messageType, String message) throws InterruptedException {

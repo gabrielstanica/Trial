@@ -27,7 +27,7 @@ public class HomePage extends TestBase {
 			@FindBy(xpath = "(//span[@class='woocommerce-Price-amount amount'])[11]"),
 			@FindBy(xpath = "(//span[@class='woocommerce-Price-amount amount'])[12]")
 	})
-	@CacheLookup
+	//@CacheLookup
 	List<WebElement> item;
 
 
@@ -54,7 +54,15 @@ public class HomePage extends TestBase {
 	}
 	public void goToProduct(Integer count)
 	{
-		item.get(count).click();
+		try
+		{
+			item.get(count).click();
+		}
+		catch(org.openqa.selenium.StaleElementReferenceException ex)
+		{
+			//item.add()
+			item.get(count).click();
+		}
 	}
 	
 	

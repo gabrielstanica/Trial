@@ -38,11 +38,11 @@ public class ProductWordPressPage extends TestBase {
 
 	public boolean checkIfCanBeAdded() {
 
-		try {
+		/*try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
-		}
+		}*/
 		Boolean c = isElementPresent(dropDownOption);
 		if(c)
 		{

@@ -1,6 +1,7 @@
 package com.katalon.pages;
 
 import com.katalon.base.TestBase;
+import com.qa.ExtentReportListener.ExtentReportHelpers;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindAll;
@@ -42,6 +43,8 @@ public class CartPage extends TestBase {
 	public List<WebElement> items4;
 
 
+	@FindBy(css = ".woocommerce-cart-form__cart-item.cart_item")
+	public List<WebElement> elementRows;
 
 	// Initializing the Page Objects:
 	public CartPage() {
@@ -65,6 +68,8 @@ public class CartPage extends TestBase {
 
 	public void getLowestPrice()
 	{
+		ExtentReportHelpers.InfoStep("Lowest price %s", String.valueOf(lowest));
+
 		lowest = item1Price;
 		if(item2Price < lowest)
 		{
@@ -76,7 +81,7 @@ public class CartPage extends TestBase {
 		}
 		if(item4Price < lowest)
 		{
-			lowest = item3Price;
+			lowest = item4Price;
 		}
 	}
 
@@ -87,19 +92,50 @@ public class CartPage extends TestBase {
 			items1.get(0).click();
 		}
 		else {
-			if (item2Price < lowest) {
+			if (item2Price == lowest) {
 				items2.get(0).click();
 			} else {
-				if (item3Price < lowest) {
+				if (item3Price == lowest) {
 					items3.get(0).click();
 				} else {
 
-					if (item4Price < lowest) {
+					if (item4Price == lowest) {
 						items4.get(0).click();
 					}
 				}
 			}
 		}
+
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public int noOfProducts()
+	{
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+
+		return elementRows.size();
+	}
+
+
+	public boolean countProducts(int neededProducts)
+	{
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+
+		if(elementRows.size() == neededProducts)
+			return true;
+		else return false;
 	}
 
 
